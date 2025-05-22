@@ -26,6 +26,7 @@ GROUP BY i.TrackId, t.Name, art.Name, g.Name
 ORDER BY Revenue DESC
 LIMIT 10
 ```
+![Preview of Query 1](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task1.png?raw=true)
 
 ### 2. Strategic Markets
 
