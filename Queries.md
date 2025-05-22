@@ -26,7 +26,7 @@ GROUP BY i.TrackId, t.Name, art.Name, g.Name
 ORDER BY Revenue DESC
 LIMIT 10
 ```
-![Preview of Query 1](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task1.png?raw=true)
+![Preview of Query 1](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task1.png)
 
 ### 2. Strategic Markets
 
@@ -77,6 +77,7 @@ FROM Customer as c
 	LEFT JOIN InvoiceLine as il ON i.InvoiceId = il.InvoiceId
 GROUP BY 1, 2, 3
 ```
+![Preview of Query 3](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task3.png)
 
 ### 4. Top Genre per Customer
 
@@ -108,6 +109,7 @@ JOIN cte USING(CustomerId)
 WHERE cte.Rank = 1
 ORDER BY 4 DESC
 ```
+![Preview of Query 4](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task4.png)
 
 ### 5. Seasonality of Purchases
 
@@ -135,6 +137,7 @@ JOIN InvoiceLine AS il USING(InvoiceId)
 GROUP BY Year, Month
 ORDER BY Year, Month
 ```
+![Preview of Query 5](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task5.png)
 
 ### 6. Inefficient Catalog
 
@@ -156,6 +159,7 @@ FROM Track as t
 	LEFT JOIN InvoiceLine as il ON t.TrackId = il.TrackId
 WHERE il.TrackId IS NULL
 ```
+![Preview of Query 6](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task6.png)
 
 ### 7. Repeat Purchases
 
@@ -177,6 +181,7 @@ FROM Customer as c
 GROUP BY c.CustomerId
 HAVING COUNT(DISTINCT i.InvoiceID)>1
 ```
+![Preview of Query 7](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task7.png)
 
 ### 8. Geography of Jazz Fans
 
@@ -200,6 +205,7 @@ WHERE g.Name = 'Jazz'
 GROUP BY 1 
 ORDER BY Revenue DESC
 ```
+![Preview of Query 8](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task8.png)
 
 ### 9. Listening Duration by Genre
 
@@ -219,6 +225,7 @@ FROM InvoiceLine as il
 GROUP BY 1
 ORDER BY 2 DESC
 ```
+![Preview of Query 9](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task9.png)
 
 ### 10. Top Tracks with Repeat Purchases
 
@@ -245,6 +252,7 @@ HAVING COUNT(*) > 1
 			GROUP BY TrackId
 		) as avg_revenue)
 ```
+![Preview of Query 10](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task10.png)
 
 ### 11. Sales by Managers
 
@@ -266,6 +274,7 @@ FROM Employee as e
 GROUP BY e.EmployeeId 
 ORDER BY 2 DESC
 ```
+![Preview of Query 11](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task11.png)
 
 ### 12. Customers Without Orders
 
@@ -284,6 +293,7 @@ FROM Customer as c
 	LEFT JOIN Invoice as i ON c.CustomerId = i.CustomerId
 WHERE i.InvoiceId IS NULL 
 ```
+![Preview of Query 12](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task12.png)
 
 ### 13. Suspicious Spending Behavior
 
@@ -307,6 +317,7 @@ HAVING i.Total > (SELECT AVG(Total)*1.5
 				 WHERE c.CustomerId = i2.CustomerId )
 ORDER BY 1
 ```
+![Preview of Query 13](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task13.png)
 
 ### 14. Similar Music Taste Clusters
 
@@ -338,6 +349,7 @@ GROUP BY cg.CustomerId, cg2.CustomerId
 HAVING COUNT(*) >5
 ORDER BY 3 DESC
 ```
+![Preview of Query 14](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task14.png)
 
 ### 15. Playlist for New Customers
 
@@ -368,3 +380,4 @@ WHERE i.CustomerId IN (SELECT CustomerId
 	  WHERE FirstOrder >= DATE((SELECT MAX(InvoiceDate) as LastOrder
 				    FROM Invoice), '-42 months'))
 ```
+![Preview of Query 15](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task15.png)
