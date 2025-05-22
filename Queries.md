@@ -364,5 +364,5 @@ FROM  Invoice as i
 WHERE i.CustomerId IN (SELECT CustomerId
 	  FROM CustomerReg
 	  WHERE FirstOrder >= DATE((SELECT MAX(InvoiceDate) as LastOrder
-								FROM Invoice), '-42 months'))
+				    FROM Invoice), '-42 months'))
 ```
