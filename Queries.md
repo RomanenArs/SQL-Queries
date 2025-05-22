@@ -55,6 +55,7 @@ GROUP BY i.BillingCountry
 ORDER BY TotalRevenue DESC, AvgInvoice DESC
 LIMIT 5
 ```
+![Preview of Query 2](https://github.com/RomanenArs/SQL-Queries/blob/main/screenshots/Task2.png)
 
 ### 3. Top Customers by Lifetime Value
 
