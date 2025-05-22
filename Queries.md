@@ -348,9 +348,9 @@ Find unique tracks purchased by customers who registered within the last 42 mont
 **SQL Query:**
 ```sql
 WITH CustomerReg AS(SELECT CustomerId 
-						, MIN(InvoiceDate) as FirstOrder
-					FROM Invoice
-					GROUP BY 1)
+			, MIN(InvoiceDate) as FirstOrder
+		    FROM Invoice
+		    GROUP BY 1)
 					
 SELECT DISTINCT
 	  t.Name as TrackName 
